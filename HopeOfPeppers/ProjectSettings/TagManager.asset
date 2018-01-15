@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BACKGROUND_FAR
+    uniqueID: 540021371
+    locked: 0
+  - name: GAMEWORLD
+    uniqueID: 1647540903
+    locked: 0
+  - name: EFFECT
+    uniqueID: 2664361111
+    locked: 0
+  - name: BACKGROUND_NEAR
+    uniqueID: 1471742871
+    locked: 0

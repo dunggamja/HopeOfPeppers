@@ -36,6 +36,14 @@ public class GameMain : MonoBehaviour
         scaledTimeUpdate += WorkMgr.Update;
         scaledTimeUpdate += StageMgr.Update;
         unscaledTimeUpdate += TimeMgr.Update;
+
+        StageMgr.LoadLevel(1);
+    }
+
+
+    public void Start()
+    {
+        
     }
 
     public void OnDestroy()
