@@ -15,8 +15,8 @@ public class Stage
     private float timeSinceStageStart = 0f;
 
 
-    private GameObject backgroundFar = null;
-    private GameObject backgroundNear = null;
+    private static GameObject backgroundFar = null;
+    private static GameObject backgroundNear = null;
     
 
 
