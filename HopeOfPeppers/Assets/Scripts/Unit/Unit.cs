@@ -23,12 +23,13 @@ public class Stat
 }
 
 public class Unit {
-    private int id;
-    private int kind;
-    private Stat stat;
-    private Stat buffedStat;
-    private Vector3 position;
-    private Vector3 direction;
+    public int id;
+    public int kind;
+    public Stat stat;
+    public Stat buffedStat;
+    public Vector3 position;
+    public Vector3 direction;
+    public int condition;
     
     public static bool operator ==(Unit aUnit, Unit bUnit)
     {
@@ -41,33 +42,36 @@ public class Unit {
     public override bool Equals(object obj)
     {
         var item = obj as Unit;
-
         if (item == null)
         {
             return false;
         }
-
         return this.id.Equals(item.id);
     }
     public override int GetHashCode()
     {
         return this.id.GetHashCode();
     }
+
+    public void init()
+    {
+
+    }
 }
 
 
 public class UnitManager
 {
-    private static UnitManager instance = null;
+    private static UnitManager _instance = null;
     public Hashtable unitHashTable;
 
-    public static UnitManager Instance
+    public static UnitManager instance
     {
         get
         {
             if (instance == null)
             {
-                instance = new UnitManager();
+                _instance = new UnitManager();
             }
             return instance;
         }
@@ -80,6 +84,41 @@ public class UnitManager
 
     public void addUnit(int campId, Unit unit)
     {
-        
+        if (unitHashTable.ContainsKey(campId))
+        {
+            (unitHashTable[campId] as List<Unit>).Add(unit);
+        }
+        else
+        {
+            List<Unit> tmp = new List<Unit>();
+            tmp.Add(unit);
+
+            unitHashTable.Add(campId, tmp); 
+        }
+    }
+    
+    public bool isEnemy(Unit unit)
+    {
+        return true;
+    }
+
+    public bool attackEnemy(Unit unit)
+    {
+        return true;
+    }
+
+    public bool moveToEnemy(Unit unit)
+    {
+        return true;
+    }
+
+    public bool isUnitDead(Unit unit)
+    {
+        return true;
+    }
+
+    public bool DeadProcess(Unit unit)
+    {
+        return true;
     }
 }
