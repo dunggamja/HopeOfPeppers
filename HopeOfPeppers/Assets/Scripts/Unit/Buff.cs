@@ -27,7 +27,7 @@ public class BuffManager
             {
                 _instance = new BuffManager();
             }
-            return instance;
+            return _instance;
         }
     }
 

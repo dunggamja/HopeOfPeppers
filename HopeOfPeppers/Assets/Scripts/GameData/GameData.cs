@@ -25,6 +25,28 @@ namespace GAMEDATA
             WORK_KIND_END
         }
 
+        public enum UNIT_KIND : int
+        {
+            UNIT_NONE,
+            UNIT_BEGIN,
+            UNIT_LUCINA = UNIT_BEGIN,
+            UNIT_END
+        }
+
+        public class GAMEDATA_UNIT_STAT
+        {
+            public int unitKind = 0;
+            public int unitLevel = 0;
+            public Stat unitBaseStat = new Stat();
+
+            public GAMEDATA_UNIT_STAT(int aKind, int aLevel)
+            {
+                unitKind = aKind;
+                unitLevel = aLevel;
+                unitBaseStat = new Stat(aLevel, 1, 1, 1, 1, 1, 1);
+            }
+        }
+
         public class GAMEDATA_STAGE_BACKGROUND
         {
             public enum BACKGROUND_TYPE
@@ -195,10 +217,23 @@ namespace GAMEDATA
                 DATA.GAMEDATA_WORK data = new DATA.GAMEDATA_WORK(i, workLevelList);
                 workDatas.Add(data.workKind, data);
             }
+
+
+            //유닛정보
+            for (int i = (int)DATA.UNIT_KIND.UNIT_BEGIN; i < (int)DATA.UNIT_KIND.UNIT_END; ++i)
+            {
+                unitStatDatas.Add(i, new List<DATA.GAMEDATA_UNIT_STAT>());
+                for (int level = 1; level <= DEFINE.UNIT_MAX_LEVEL; ++level)
+                {
+                    var statInfo = new DATA.GAMEDATA_UNIT_STAT(i, level);
+                    unitStatDatas[i].Add(statInfo);        
+                }
+            }
         }
 
         private Dictionary<int, DATA.GAMEDATA_STAGE> stageDatas = new Dictionary<int, DATA.GAMEDATA_STAGE>();
         private Dictionary<int, DATA.GAMEDATA_WORK> workDatas = new Dictionary<int, DATA.GAMEDATA_WORK>();
+        private Dictionary<int, List<DATA.GAMEDATA_UNIT_STAT>> unitStatDatas = new Dictionary<int, List<DATA.GAMEDATA_UNIT_STAT>>();
 
 
         public DATA.GAMEDATA_WORK GetWorkData(int aKind)
@@ -232,6 +267,24 @@ namespace GAMEDATA
             if (stageDatas.ContainsKey(aKind))
                 return stageDatas[aKind];
 
+            return null;
+        }
+
+
+        public DATA.GAMEDATA_UNIT_STAT GetUnitStat(int aKind, int aLevel)
+        {
+            if (unitStatDatas.ContainsKey(aKind))
+            {
+                var findData = unitStatDatas[aKind].Find((DATA.GAMEDATA_UNIT_STAT statInfo) =>
+                {
+                    if (statInfo.unitLevel == aLevel)
+                        return true;
+                    return false;
+                });
+
+                return findData;
+            }
+                
             return null;
         }
 
