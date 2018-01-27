@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine;
 
 public class SpawnInfo
 {
@@ -19,6 +19,10 @@ public class SpawnInfo
     public SPAWN_TYPE SpawnType { get { return spawnType; }  private set { spawnType = value; } }
     public Int32 SpawnUnitKind { get { return spawnUnitKind; } private set { spawnUnitKind = value; } }
     public Int32 SpawnSeconds { get { return spawnSeconds; } private set { spawnSeconds = value; } }
+    public Vector3 position;
+    public int campId;
+    public float range;
+    
 
     public SpawnInfo() { }
     public SpawnInfo(SPAWN_TYPE aSpawnType, Int32 aUnitKind, Int32 aSpawnSeconds)

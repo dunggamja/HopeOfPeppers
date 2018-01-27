@@ -30,6 +30,7 @@ namespace GAMEDATA
             UNIT_NONE,
             UNIT_BEGIN,
             UNIT_LUCINA = UNIT_BEGIN,
+            UNIT_SPWAN,
             UNIT_END
         }
 
@@ -43,7 +44,16 @@ namespace GAMEDATA
             {
                 unitKind = aKind;
                 unitLevel = aLevel;
-                unitBaseStat = new Stat(aLevel, 1, 1, 1, 1, 1, 1);
+
+                if(aKind == (int)UNIT_KIND.UNIT_LUCINA)
+                {
+                    unitBaseStat = new Stat(aLevel, 1, 1, 1, 1, 1, 1);
+                } else if(aKind == (int)UNIT_KIND.UNIT_SPWAN)
+                {
+                    unitBaseStat = new Stat(aLevel, 0, 100, 100, 0, 0, 0);
+                }
+                
+
             }
         }
 

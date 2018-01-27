@@ -17,6 +17,7 @@ public class Stage
 
     private static GameObject backgroundFar = null;
     private static GameObject backgroundNear = null;
+    private static GameObject cloud = null;
     
 
 
@@ -28,17 +29,6 @@ public class Stage
         TerrainStartPos = aTerrainStartPos;
         TerrainEndPos = aTerrainEndPos;
         Level = aLevel;
-    }
-
-    public void Init()
-    {
-        BackgroundTexture = null;
-        StageSize = Vector2.zero;
-        TerrainStartPos = Vector2.zero;
-        TerrainEndPos = Vector2.zero;
-        Level = 0;
-        if (null == spawnHelper)
-            spawnHelper = new SpawnHelper();
 
         spawnHelper.Clear();
         var stageData = GAMEDATA.GAMEDATAINFOS.Instance.GetStageData(Level);
@@ -56,6 +46,21 @@ public class Stage
         spawnHelper.Sort_SpawnInfoList_BySpawnTime();
     }
 
+    public void Init()
+    {
+        BackgroundTexture = null;
+        StageSize = Vector2.zero;
+        TerrainStartPos = Vector2.zero;
+        TerrainEndPos = Vector2.zero;
+        Level = 0;
+        if (null == spawnHelper)
+            spawnHelper = new SpawnHelper();
+
+       
+
+      
+    }
+
 
     
     public void Update(float aDeltaTime)
@@ -66,6 +71,31 @@ public class Stage
         for (int i = (int)SpawnInfo.SPAWN_TYPE.SPAWN_TYPE_BEGIN; i < (int)SpawnInfo.SPAWN_TYPE.SPAWN_TYPE_END; ++i)
         {
             spawnHelper.Pop_SpawnInfo_By_Time((SpawnInfo.SPAWN_TYPE)i, (int)timeSinceStageStart, ref spawnList);
+            
+        }
+
+        cloud.transform.localPosition += new Vector3(aDeltaTime, 0, 0);
+        if (cloud.transform.localPosition.x > cloud.GetComponent<SpriteRenderer>().size.x / 4)
+        {
+            cloud.transform.localPosition = new Vector3(-cloud.GetComponent<SpriteRenderer>().size.x / 4, cloud.transform.localPosition.y, cloud.transform.localPosition.z);
+        }
+
+        if (0 < spawnList.Count)
+        {
+            Debug.Log(spawnList.Count);
+        }
+
+        
+        GameObject enemyOriginal = Resources.Load("Prefabs/Character/Lucina") as GameObject;
+        for (int i = 0; i < spawnList.Count; ++i)
+        {
+            GameObject enemy = GameObject.Instantiate(enemyOriginal);
+            UnitAction enemyAction = enemy.AddComponent<UnitAction>();
+            enemy.transform.localPosition = new Vector3(8, -2, 1);
+            enemyAction.unit = UnitManager.instance.CreateUnit(2, (int)GAMEDATA.DATA.UNIT_KIND.UNIT_LUCINA, 1, enemy.transform.localPosition);
+            enemyAction.campId = 2;
+            enemyAction.unitKind = (int)GAMEDATA.DATA.UNIT_KIND.UNIT_LUCINA;
+            enemyAction.unitLevel = 1;
         }
     }
 
@@ -158,7 +188,45 @@ public class Stage
             spriteRenderer.sortingLayerName = sortingLayerName;
             spriteRenderer.sortingOrder = sortIdx;
 
+            
+
+            Debug.Log(spriteRenderer.size);
+
         }
+
+        
+        cloud = backgroundFar.transform.GetChild(0).gameObject;
+        var tmpSpriteRenderer = cloud.GetComponent<SpriteRenderer>();
+        tmpSpriteRenderer.drawMode = SpriteDrawMode.Tiled;
+        tmpSpriteRenderer.size = new Vector2(tmpSpriteRenderer.size.x * 2, tmpSpriteRenderer.size.y);
+
+
+        //필요한작업! 
+        // 아군 적군 스폰 건물 생성
+        GameObject oriSpawn1  = Resources.Load("Prefabs/Spawn/Spawn_1") as GameObject;
+        GameObject userSpawn = GameObject.Instantiate(oriSpawn1);
+        userSpawn.transform.localPosition = new Vector3(-8, -2, 1);
+        UnitAction spawnAction1 = userSpawn.AddComponent<UnitAction>();
+        spawnAction1.unit = UnitManager.instance.CreateUnit(1, (int)GAMEDATA.DATA.UNIT_KIND.UNIT_SPWAN, 1, userSpawn.transform.localPosition);
+        spawnAction1.campId = 1;
+        spawnAction1.unitKind = (int)GAMEDATA.DATA.UNIT_KIND.UNIT_SPWAN;
+        spawnAction1.unitLevel = 1;
+ 
+
+
+
+        GameObject oriSpawn2 = Resources.Load("Prefabs/Spawn/Spawn_2") as GameObject;
+        GameObject enemySpawn = GameObject.Instantiate(oriSpawn2);
+        enemySpawn.transform.localPosition = new Vector3(8, -2, 1);
+        UnitAction spawnAction2 = enemySpawn.AddComponent<UnitAction>();
+        spawnAction2.unit = UnitManager.instance.CreateUnit(2, (int)GAMEDATA.DATA.UNIT_KIND.UNIT_SPWAN, 1, enemySpawn.transform.localPosition);
+        spawnAction2.campId = 2;
+        spawnAction2.unitKind = (int)GAMEDATA.DATA.UNIT_KIND.UNIT_SPWAN;
+        spawnAction2.unitLevel = 1;
+
+        // 아군 인원은 한번에 다 생성
+
+
     }
 
 }

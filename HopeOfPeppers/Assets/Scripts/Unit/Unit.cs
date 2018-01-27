@@ -34,28 +34,6 @@ public class Unit {
     public Vector3 direction;
     public int condition;
     
-    public static bool operator ==(Unit aUnit, Unit bUnit)
-    {
-        return aUnit.id == bUnit.id;
-    }
-    public static bool operator !=(Unit aUnit, Unit bUnit)
-    {
-        return aUnit.id != bUnit.id;
-    }
-    public override bool Equals(object obj)
-    {
-        var item = obj as Unit;
-        if (item == null)
-        {
-            return false;
-        }
-        return this.id.Equals(item.id);
-    }
-    public override int GetHashCode()
-    {
-        return this.id.GetHashCode();
-    }
-
     public void init()
     {
         condition = (int)UnitContition.NORMAL;
@@ -68,12 +46,13 @@ public class UnitManager
 {
     private static UnitManager _instance = null;
     public Hashtable unitHashTable;
+    private int createUnitId = 0;
 
     public static UnitManager instance
     {
         get
         {
-            if (instance == null)
+            if (_instance == null)
             {
                 _instance = new UnitManager();
             }
@@ -104,8 +83,10 @@ public class UnitManager
     public bool isEnemy(Unit unit)
     {
         var iter = unitHashTable.GetEnumerator();
+        if (unit == null) return false;
         while (iter.MoveNext())
         {
+            
             if (unit.campId == (int)iter.Key) continue;
 
             List<Unit> value = iter.Value as List<Unit>;
@@ -123,7 +104,7 @@ public class UnitManager
 
     public bool attackEnemy(Unit unit)
     {
-        float minDistance = 0.0f;
+        float minDistance = 1000.0f;
         Unit closeEnemy = null;
 
         var iter = unitHashTable.GetEnumerator();
@@ -154,16 +135,21 @@ public class UnitManager
 
         unit.condition = (int)UnitContition.ATTACK;
         closeEnemy.condition = (int)UnitContition.DAMAGED;
-        closeEnemy.stat.remainHp -= unit.stat.power;
+        if (unit.condition == (int)UnitContition.ATTACK)
+        {
+            closeEnemy.stat.remainHp -= unit.stat.power;
+            if (closeEnemy.stat.remainHp <= 0) closeEnemy.condition = (int)UnitContition.DEAD;
+        }
 
         return true;
     }
 
     public bool moveToEnemy(Unit unit)
     {
-        float minDistance = 0.0f;
+        float minDistance = 1000.0f;
         Unit closeEnemy = null;
 
+        if (unit == null) return false;
         var iter = unitHashTable.GetEnumerator();
         while (iter.MoveNext())
         {
@@ -174,21 +160,26 @@ public class UnitManager
             foreach (Unit lUnit in value)
             {
                 float distance = (unit.position - lUnit.position).magnitude;
-                if (unit.stat.range > distance)
-                {
-                    if (minDistance > distance)
-                    {
-                        minDistance = distance;
-                        closeEnemy = lUnit;
-                    }
+                if (minDistance > distance)
+                 {
+                    minDistance = distance;
+                    closeEnemy = lUnit;
                 }
             }
         }
-        if (closeEnemy == null) return false;
+        if (closeEnemy == null)
+        {
+            return false;
+        }
+
+        //
 
         // 포지션 움직이기
-        unit.position += (closeEnemy.position - unit.position).normalized*unit.stat.moveSpeed;
         unit.condition = (int)UnitContition.MOVING;
+        if (unit.condition == (int)UnitContition.MOVING)
+        {
+            unit.position += (closeEnemy.position - unit.position).normalized * unit.stat.moveSpeed * 0.01f;
+        }
 
 
         return true;
@@ -215,7 +206,7 @@ public class UnitManager
         return true;
     }
 
-    public Unit CrateUnit(int campId, int kind, int level, Vector3 position)
+    public Unit CreateUnit(int campId, int kind, int level, Vector3 position)
     {
         Unit unit = new Unit();
 
@@ -223,6 +214,7 @@ public class UnitManager
         if (null == stat)
             return null;
 
+        unit.id = createUnitId++;
         unit.campId = campId;
         unit.kind = kind;
         unit.position = position;
