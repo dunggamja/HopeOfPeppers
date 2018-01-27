@@ -1,0 +1,6 @@
+diff a/.gitignore b/.gitignore	(rejected hunks)
+@@ -571,3 +571,4 @@
+ HopeOfPeppers/Library/LastSceneManagerSetup.txt
+ HopeOfPeppers/Library/CurrentLayout.dwlt
+ >>>>>>> 29519246a7fad9fb62125e3de71be782388047de
++HopeOfPeppers/Temp/UnityTempFile-49dc9741728303e48aeee18b40135471
