@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpawnHelper
 {
-    private List<SpawnInfo>[] listSpawnInfo = new List<SpawnInfo>[(int)SpawnInfo.SPAWN_TYPE.SPAWN_TYPE_END];
+    private List<SpawnInfo>[] listSpawnInfo = new List<SpawnInfo>[(int)SpawnInfo.SPAWN_TYPE.SPAWN_TYPE_END] { new List<SpawnInfo>()};
 
 
 

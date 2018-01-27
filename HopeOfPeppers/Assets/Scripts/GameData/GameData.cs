@@ -25,10 +25,39 @@ namespace GAMEDATA
             WORK_KIND_END
         }
 
+        public class GAMEDATA_STAGE_BACKGROUND
+        {
+            public enum BACKGROUND_TYPE
+            {
+                BACKGROUND_FAR,
+                BACKGROUND_NEAR,
+                BACKGROUND_END
+            }
+
+            public BACKGROUND_TYPE backgroundType = BACKGROUND_TYPE.BACKGROUND_FAR;
+            public string imgSubFileName = string.Empty;
+            public string imgFileName = string.Empty;
+            
+
+            public GAMEDATA_STAGE_BACKGROUND()
+            {
+                backgroundType = BACKGROUND_TYPE.BACKGROUND_END;
+                imgFileName = string.Empty;
+                imgSubFileName = string.Empty;
+            }
+
+            public GAMEDATA_STAGE_BACKGROUND(BACKGROUND_TYPE aBackgroundType, string aImgFileName, string aImgSubFileName = "")
+            {
+                backgroundType = aBackgroundType;
+                imgFileName = aImgFileName;
+                imgSubFileName = aImgSubFileName;
+            }
+        }
+
         public class GAMEDATA_STAGE
         {
             public readonly int Level = 0;
-            public readonly string BackgroundTexture = string.Empty;
+            public readonly GAMEDATA_STAGE_BACKGROUND[] BackgroundTexture = null;
             public readonly int BackgroundSize_X = 0;
             public readonly int BackgroundSize_Y = 0;
             public readonly int TerrainStart_X = 0;
@@ -37,7 +66,7 @@ namespace GAMEDATA
             public readonly int TerrainEnd_Y = 0;
             public readonly List<GAMEDATA_SPAWN> SpawnList = new List<GAMEDATA_SPAWN>();
 
-            public GAMEDATA_STAGE(int aLevel, string aBackgroundTexture,
+            public GAMEDATA_STAGE(int aLevel, GAMEDATA_STAGE_BACKGROUND[] aBackgroundTexture,
                 int aBackgroundSizeX, int aBackgroundSizeY,
                 int aTerrainStartX, int aTerrainStartY,
                 int aTerrainEndX, int aTerrainEndY,
@@ -137,7 +166,15 @@ namespace GAMEDATA
                 }
 
                 DATA.GAMEDATA_STAGE data = new DATA.GAMEDATA_STAGE(i
-                    , string.Empty, 1280, 600
+                    ,
+                    new DATA.GAMEDATA_STAGE_BACKGROUND[]
+                    {
+                        new DATA.GAMEDATA_STAGE_BACKGROUND(DATA.GAMEDATA_STAGE_BACKGROUND.BACKGROUND_TYPE.BACKGROUND_FAR, "backGroundTexture", "backGroundTexture_2"),
+                        new DATA.GAMEDATA_STAGE_BACKGROUND(DATA.GAMEDATA_STAGE_BACKGROUND.BACKGROUND_TYPE.BACKGROUND_FAR, "backGroundTexture", "backGroundTexture_1"),
+                        new DATA.GAMEDATA_STAGE_BACKGROUND(DATA.GAMEDATA_STAGE_BACKGROUND.BACKGROUND_TYPE.BACKGROUND_FAR, "backGroundTexture", "backGroundTexture_0"),
+                        new DATA.GAMEDATA_STAGE_BACKGROUND(DATA.GAMEDATA_STAGE_BACKGROUND.BACKGROUND_TYPE.BACKGROUND_NEAR, "backGroundTexture", "backGroundTexture_3"),
+                    }
+                    , 1280, 600
                     , 0, 0, 1280, 600
                     , spawnList);
 

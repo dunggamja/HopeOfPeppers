@@ -17,6 +17,10 @@ public class GameMain : MonoBehaviour
     public UpdateTime scaledTimeUpdate;
     public UpdateTime unscaledTimeUpdate;
 
+
+    public delegate IEnumerator delegateCoroutine();
+    public delegateCoroutine GameMainCoroutine;
+
     public void Awake()
     {
         Instance = this;
@@ -36,6 +40,14 @@ public class GameMain : MonoBehaviour
         scaledTimeUpdate += WorkMgr.Update;
         scaledTimeUpdate += StageMgr.Update;
         unscaledTimeUpdate += TimeMgr.Update;
+
+        StageMgr.LoadLevel(1);
+    }
+
+
+    public void Start()
+    {
+        
     }
 
     public void OnDestroy()
@@ -64,5 +76,11 @@ public class GameMain : MonoBehaviour
     public void LoadData()
     {
 
+    }
+
+    [ContextMenu("tstLoadlevel")]
+    private void LoadLevelTest()
+    {
+        StageMgr.LoadLevel(1);
     }
 }
