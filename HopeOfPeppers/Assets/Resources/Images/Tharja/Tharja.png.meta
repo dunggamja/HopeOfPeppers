@@ -1,0 +1,577 @@
+fileFormatVersion: 2
+guid: de393f8abb729ae4ebedff90081bce7b
+timeCreated: 1517028963
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Tharja_0
+    21300002: Tharja_1
+    21300004: Tharja_2
+    21300006: Tharja_3
+    21300008: Tharja_4
+    21300010: Tharja_5
+    21300012: Tharja_6
+    21300014: Tharja_7
+    21300016: Tharja_8
+    21300018: Tharja_9
+    21300020: Tharja_10
+    21300022: Tharja_11
+    21300024: Tharja_12
+    21300026: Tharja_13
+    21300028: Tharja_14
+    21300030: Tharja_15
+    21300032: Tharja_16
+    21300034: Tharja_17
+    21300036: Tharja_18
+    21300038: Tharja_19
+    21300040: Tharja_20
+    21300042: Tharja_21
+    21300044: Tharja_22
+    21300046: Tharja_23
+    21300048: Tharja_24
+    21300050: Tharja_25
+    21300052: Tharja_26
+    21300054: Tharja_27
+    21300056: Tharja_28
+    21300058: Tharja_29
+    21300060: Tharja_30
+    21300062: Tharja_31
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tharja_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 621
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_1
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 621
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_2
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 621
+        width: 65
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_3
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 657
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_4
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 615
+        width: 40
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_5
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 523
+        width: 19
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_6
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 522
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_7
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 524
+        width: 17
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_8
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 527
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_9
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 518
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_10
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 524
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_11
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 516
+        width: 33
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_12
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 524
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 449
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_14
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 452
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_15
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 451
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_16
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 450
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_17
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 467
+        width: 41
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 399
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_19
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 399
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_20
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 410
+        width: 14
+        height: 47
+      alignment: 9
+      pivot: {x: 0.40106854, y: 0.79468685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_21
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 277
+        width: 84
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.8606847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_22
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 308
+        width: 27
+        height: 66
+      alignment: 9
+      pivot: {x: 0.8590814, y: 0.8987205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_23
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 311
+        width: 31
+        height: 63
+      alignment: 9
+      pivot: {x: 0.2766074, y: 0.85175335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_24
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 317
+        width: 23
+        height: 56
+      alignment: 9
+      pivot: {x: 0.43978086, y: 0.8709897}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_25
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 317
+        width: 23
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9204554}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_26
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 136
+        width: 105
+        height: 96
+      alignment: 9
+      pivot: {x: 0.51319087, y: 0.80297536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_27
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 140
+        width: 103
+        height: 92
+      alignment: 9
+      pivot: {x: 0.51344717, y: 0.8312026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_28
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 143
+        width: 107
+        height: 89
+      alignment: 9
+      pivot: {x: 0.51294404, y: 0.81124246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_29
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 150
+        width: 118
+        height: 82
+      alignment: 9
+      pivot: {x: 0.54695, y: 0.7871399}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_30
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 39
+        width: 122
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5113526, y: 0.76635176}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tharja_31
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 32
+        width: 116
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.8132804}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

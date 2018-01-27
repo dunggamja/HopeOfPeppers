@@ -16,16 +16,16 @@ public class Buff
 
 public class BuffManager
 {
-    private static BuffManager _instance = null;
+    private static BuffManager instance = null;
     public Hashtable buffHashTable;
 
-    public static BuffManager instance
+    public static BuffManager Instance
     {
         get
         {
             if (instance==null)
             {
-                _instance = new BuffManager();
+                instance = new BuffManager();
             }
             return _instance;
         }
