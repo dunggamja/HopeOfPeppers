@@ -368,6 +368,7 @@ HopeOfPeppers/Library/UnityAssemblies/UnityEditor.GoogleAudioSpatializer.xml
 HopeOfPeppers/Library/ShaderCache.db
 HopeOfPeppers/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
 HopeOfPeppers/Library/EditorInstance.json
+<<<<<<< HEAD
 HopeOfPeppers/Library/UnityAssemblies/SyntaxTree.VisualStudio.Unity.Bridge.xml
 HopeOfPeppers/Library/UnityAssemblies/SyntaxTree.VisualStudio.Unity.Bridge.dll
 HopeOfPeppers/Library/ShaderCache/b/bb75332a2cf949bf2ab899db6ae5df33.bin
@@ -466,18 +467,25 @@ HopeOfPeppers/Library/UnityAssemblies/UnityEditor.Analytics.xml
 HopeOfPeppers/Library/UnityAssemblies/UnityEditor.Analytics.dll
 HopeOfPeppers/Library/UnityAssemblies/UnityEditor.Advertisements.xml
 HopeOfPeppers/Library/UnityAssemblies/UnityEditor.Advertisements.dll
+=======
+HopeOfPeppers/Library/ShaderCache/3/3fae34bc1110c7bb5a66791179ee0cd7.bin
+>>>>>>> 29519246a7fad9fb62125e3de71be782388047de
 HopeOfPeppers/Library/metadata/f6/f671988e391c6ff469a6bd5b5efe1047.info
 HopeOfPeppers/Library/metadata/f6/f671988e391c6ff469a6bd5b5efe1047
 HopeOfPeppers/Library/metadata/ee/eebcc726e82619046b35f853aab3da8c.info
 HopeOfPeppers/Library/metadata/ee/eebcc726e82619046b35f853aab3da8c
 HopeOfPeppers/Library/metadata/e6/e6c152fcc3777df4c918746e7c425819.info
 HopeOfPeppers/Library/metadata/e6/e6c152fcc3777df4c918746e7c425819
+<<<<<<< HEAD
 HopeOfPeppers/Library/metadata/e5/e5233cb2d002e3044ac618119469762d.info
 HopeOfPeppers/Library/metadata/e5/e5233cb2d002e3044ac618119469762d
+=======
+>>>>>>> 29519246a7fad9fb62125e3de71be782388047de
 HopeOfPeppers/Library/metadata/dd/ddad422fa31bf7c438a94e045d75b713.info
 HopeOfPeppers/Library/metadata/dd/ddad422fa31bf7c438a94e045d75b713
 HopeOfPeppers/Library/metadata/c7/c78a2a2f47efadd48ac12dd6dd3935f6.info
 HopeOfPeppers/Library/metadata/c7/c78a2a2f47efadd48ac12dd6dd3935f6
+<<<<<<< HEAD
 HopeOfPeppers/Library/metadata/c5/c55bd4d97e7fc5644a9df48be42f70c7.info
 HopeOfPeppers/Library/metadata/c5/c55bd4d97e7fc5644a9df48be42f70c7
 HopeOfPeppers/Library/metadata/c1/c1b18053523f5d74794f816affc208a4.info
@@ -541,3 +549,25 @@ HopeOfPeppers/Library/UnityAssemblies/UnityEngine.Networking.dll
 HopeOfPeppers/Library/UnityAssemblies/UnityEngine.JSONSerializeModule.dll
 HopeOfPeppers/Library/UnityAssemblies/UnityEngine.InputModule.dll
 HopeOfPeppers/Library/UnityAssemblies/UnityEngine.ImageConversionModule.dll
+=======
+HopeOfPeppers/Library/metadata/c1/c1b18053523f5d74794f816affc208a4.info
+HopeOfPeppers/Library/metadata/c1/c1b18053523f5d74794f816affc208a4
+HopeOfPeppers/Library/metadata/b5/b596a9d55d11ec541be9ccd539932a72.info
+HopeOfPeppers/Library/metadata/b5/b596a9d55d11ec541be9ccd539932a72
+HopeOfPeppers/Library/metadata/93/93271d10ec2ebe742aa55b9432570d14.info
+HopeOfPeppers/Library/metadata/93/93271d10ec2ebe742aa55b9432570d14
+HopeOfPeppers/Library/metadata/56/56526a0319acfbf44bfc9fa2d6d1fa76.info
+HopeOfPeppers/Library/metadata/56/56526a0319acfbf44bfc9fa2d6d1fa76
+HopeOfPeppers/Library/metadata/18/18d90afea48259d49b324e040b6125ea.info
+HopeOfPeppers/Library/metadata/18/18d90afea48259d49b324e040b6125ea
+HopeOfPeppers/Library/ShaderCache/b/bb75332a2cf949bf2ab899db6ae5df33.bin
+HopeOfPeppers/Library/ShaderCache/b/b7c8878758becc9301a8e29b9ec64365.bin
+HopeOfPeppers/Library/ShaderCache/9/929e7909ffdb4f2e8c83228e23e2855d.bin
+HopeOfPeppers/Library/ShaderCache/4/41597ad1fbae71d62c29c0631d59c968.bin
+HopeOfPeppers/Library/ShaderCache/1/1efc6252e9474ddb295e0995319cfadd.bin
+HopeOfPeppers/Library/ShaderCache/1/1d99b698aae2db8f766251029d7ba1f8.bin
+HopeOfPeppers/Library/ShaderCache/1/1081a244abfe2c53d6837e1d430fd82b.bin
+HopeOfPeppers/Library/expandedItems
+HopeOfPeppers/Library/LastSceneManagerSetup.txt
+HopeOfPeppers/Library/CurrentLayout.dwlt
+>>>>>>> 29519246a7fad9fb62125e3de71be782388047de
