@@ -17,7 +17,6 @@ public class UnitAction : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
         if (unit == null) GameObject.Destroy(gameObject);
         unitBehaviorTree.init(unit);
         unitBehaviorTree.startBehaviorTree();
