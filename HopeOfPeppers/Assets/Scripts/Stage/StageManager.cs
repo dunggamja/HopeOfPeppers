@@ -32,6 +32,8 @@ public class StageManager
     {
         if (string.Equals(aLoadedScene.name, "GameScene"))
         {
+            UIManager.Instance.CloseAllUI();
+
             if(null != stageInfo)
                 SetStage(stageInfo.Level);   
         }
@@ -72,7 +74,7 @@ public class StageManager
         
         if (false == string.Equals("GameScene", UnityEngine.SceneManagement.SceneManager.GetActiveScene().name))
         {
-
+            
             GameMain.Instance.GameMainCoroutine += test;
             //현재 GameScene이 아닐 경우  씬로드 후 스테이지 오브젝트 생성.
             UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");

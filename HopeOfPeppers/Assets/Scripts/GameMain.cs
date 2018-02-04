@@ -26,8 +26,6 @@ public class GameMain : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this);
 
-        
-
         if (null == TimeMgr)
             TimeMgr = new TimeManager();
 
@@ -41,13 +39,13 @@ public class GameMain : MonoBehaviour
         scaledTimeUpdate += StageMgr.Update;
         unscaledTimeUpdate += TimeMgr.Update;
 
-        StageMgr.LoadLevel(1);
+        
     }
 
 
     public void Start()
     {
-        
+        UIManager.Instance.OpenUI<StartUI>();
     }
 
     public void OnDestroy()
