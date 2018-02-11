@@ -35,7 +35,9 @@ public class StageManager
             UIManager.Instance.CloseAllUI();
 
             if(null != stageInfo)
-                SetStage(stageInfo.Level);   
+                SetStage(stageInfo.Level);
+
+            UIManager.Instance.OpenUI<MainUI>();
         }
 
         if (null != Post_OnCompleteSceneLoaded)

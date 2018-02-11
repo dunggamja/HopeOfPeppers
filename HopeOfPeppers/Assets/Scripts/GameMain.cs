@@ -8,9 +8,11 @@ public class GameMain : MonoBehaviour
 {
     public static GameMain Instance { get; private set; }
 
+      
     public TimeManager TimeMgr { get; private set; }
     public WorkManager WorkMgr { get; private set; }
     public StageManager StageMgr { get; private set; }
+    public User         UserInfo { get; private set; }
 
 
     public delegate void UpdateTime(float aDeltaTime);
@@ -25,6 +27,8 @@ public class GameMain : MonoBehaviour
     {
         Instance = this;
         DontDestroyOnLoad(this);
+        DontDestroyOnLoad(GameObject.Find("ScreenCanvas"));
+        DontDestroyOnLoad(GameObject.Find("EventSystem"));
 
         if (null == TimeMgr)
             TimeMgr = new TimeManager();
@@ -35,11 +39,12 @@ public class GameMain : MonoBehaviour
         if (null == StageMgr)
             StageMgr = new StageManager();
 
+        if (null == UserInfo)
+            UserInfo = new User();
+
         scaledTimeUpdate += WorkMgr.Update;
         scaledTimeUpdate += StageMgr.Update;
-        unscaledTimeUpdate += TimeMgr.Update;
-
-        
+        unscaledTimeUpdate += TimeMgr.Update;        
     }
 
 
