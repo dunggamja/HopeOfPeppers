@@ -87,12 +87,12 @@ public class Stage
         }
 
         
-        GameObject enemyOriginal = Resources.Load("Prefabs/Character/Lucina") as GameObject;
+        GameObject enemyOriginal = Resources.Load("Prefabs/Character/Rogue/Rogue_01") as GameObject;
         for (int i = 0; i < spawnList.Count; ++i)
         {
             GameObject enemy = GameObject.Instantiate(enemyOriginal);
             UnitAction enemyAction = enemy.AddComponent<UnitAction>();
-            enemy.transform.localPosition = new Vector3(8, -2, 1);
+            enemy.transform.localPosition = new Vector3(8, -2.1f, 1);
             enemyAction.unit = UnitManager.instance.CreateUnit(2, (int)GAMEDATA.DATA.UNIT_KIND.UNIT_LUCINA, 1, enemy.transform.localPosition);
             enemyAction.campId = 2;
             enemyAction.unitKind = (int)GAMEDATA.DATA.UNIT_KIND.UNIT_LUCINA;
@@ -226,6 +226,18 @@ public class Stage
         spawnAction2.unitLevel = 1;
 
         // 아군 인원은 한번에 다 생성
+
+        GameObject myArmy = Resources.Load("Prefabs/Character/Lucina") as GameObject;
+        for (int i = 0; i < 2; ++i)
+        {
+            GameObject army = GameObject.Instantiate(myArmy);
+            UnitAction armyAction = army.AddComponent<UnitAction>();
+            army.transform.localPosition = new Vector3(-8+0.2f*i, -2.1f-0.2f*i, 1);
+            armyAction.unit = UnitManager.instance.CreateUnit(1, (int)GAMEDATA.DATA.UNIT_KIND.UNIT_LUCINA, 1, army.transform.localPosition);
+            armyAction.campId = 1;
+            armyAction.unitKind = (int)GAMEDATA.DATA.UNIT_KIND.UNIT_LUCINA;
+            armyAction.unitLevel = 1;
+        }
 
 
     }

@@ -51,6 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010141028922}
   - component: {fileID: 95000012403032898}
+  - component: {fileID: 210376026795134614}
   m_Layer: 0
   m_Name: Rogue_01
   m_TagString: Untagged
@@ -113,6 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010265782240}
   - component: {fileID: 212000012141359392}
+  - component: {fileID: 65469316173858032}
   m_Layer: 0
   m_Name: Rogue_weapon_01
   m_TagString: Untagged
@@ -334,6 +336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013221526974}
   - component: {fileID: 212000011640928544}
+  - component: {fileID: 65616316885314580}
   m_Layer: 0
   m_Name: Rogue_weapon_01
   m_TagString: Untagged
@@ -530,8 +533,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010208881502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.314373, y: -1.7206037, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4000011226073324}
   m_Father: {fileID: 0}
@@ -956,6 +959,30 @@ Transform:
   m_Father: {fileID: 4000012859616082}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65469316173858032
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010557565568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 0.2}
+  m_Center: {x: 2, y: -3.3, z: 0}
+--- !u!65 &65616316885314580
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012639898014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1, z: 1}
+  m_Center: {x: 1.4, y: -3.5, z: 0}
 --- !u!95 &95000012403032898
 Animator:
   serializedVersion: 3
@@ -973,6 +1000,16 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!210 &210376026795134614
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010208881502}
+  m_Enabled: 1
+  m_SortingLayerID: 1647540903
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!212 &212000010151629462
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -47,10 +47,10 @@ namespace GAMEDATA
 
                 if(aKind == (int)UNIT_KIND.UNIT_LUCINA)
                 {
-                    unitBaseStat = new Stat(aLevel, 1, 1, 1, 1, 1, 1);
+                    unitBaseStat = new Stat(aLevel, 1, 5, 5, 1, 1, 1);
                 } else if(aKind == (int)UNIT_KIND.UNIT_SPWAN)
                 {
-                    unitBaseStat = new Stat(aLevel, 0, 100, 100, 0, 0, 0);
+                    unitBaseStat = new Stat(aLevel, 0, 10, 10, 0, 0, 0);
                 }
                 
 
@@ -191,7 +191,7 @@ namespace GAMEDATA
             {
 
                 List<DATA.GAMEDATA_SPAWN> spawnList = new List<DATA.GAMEDATA_SPAWN>();
-                for (int k = 0; k < (i + 1) * 4; ++k)
+                for (int k = 0; k < 10; ++k)
                 {
                     DATA.GAMEDATA_SPAWN spawnData = new DATA.GAMEDATA_SPAWN(SpawnInfo.SPAWN_TYPE.SPAWN_TYPE_NORMAL, 1, k * 5);
                     spawnList.Add(spawnData);

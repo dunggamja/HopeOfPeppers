@@ -11,7 +11,7 @@ public class Stat
     public float moveSpeed;
     public float attackSpeed;
     public float range;
-    
+
     public Stat(int aLevel = 0, int aPower = 0, int aHp = 0, int aRemainHp = 0, int aMoveSpeed = 0, int aAttackSpeed = 0, float aRange = 0)
     {
         level = aLevel;
@@ -24,7 +24,8 @@ public class Stat
     }
 }
 
-public class Unit {
+public class Unit
+{
     public int campId;
     public int id;
     public int kind;
@@ -33,7 +34,8 @@ public class Unit {
     public Vector3 position;
     public Vector3 direction;
     public int condition;
-    
+    public bool check = false;
+
     public void init()
     {
         condition = (int)UnitContition.NORMAL;
@@ -76,29 +78,30 @@ public class UnitManager
             List<Unit> tmp = new List<Unit>();
             tmp.Add(unit);
 
-            unitHashTable.Add(unit.campId, tmp); 
+            unitHashTable.Add(unit.campId, tmp);
         }
     }
-    
+
     public bool isEnemy(Unit unit)
     {
         var iter = unitHashTable.GetEnumerator();
         if (unit == null) return false;
         while (iter.MoveNext())
         {
-            
+
             if (unit.campId == (int)iter.Key) continue;
 
             List<Unit> value = iter.Value as List<Unit>;
 
-            foreach(Unit lUnit in value)
+            foreach (Unit lUnit in value)
             {
-                if(unit.stat.range > (unit.position - lUnit.position).magnitude)
+                if (unit.stat.range > (unit.position - lUnit.position).magnitude)
                 {
                     return true;
                 }
             }
         }
+        unit.condition = (int)UnitContition.NORMAL;
         return false;
     }
 
@@ -114,7 +117,7 @@ public class UnitManager
 
             List<Unit> value = iter.Value as List<Unit>;
 
-            foreach(Unit lUnit in value)
+            foreach (Unit lUnit in value)
             {
                 float distance = (unit.position - lUnit.position).magnitude;
                 if (unit.stat.range > distance)
@@ -133,12 +136,21 @@ public class UnitManager
 
         // 충돌처리 또는 애니메이션 재생
 
+        
         unit.condition = (int)UnitContition.ATTACK;
-        closeEnemy.condition = (int)UnitContition.DAMAGED;
+        //closeEnemy.condition = (int)UnitContition.DAMAGED;
         if (unit.condition == (int)UnitContition.ATTACK)
         {
-            closeEnemy.stat.remainHp -= unit.stat.power;
-            if (closeEnemy.stat.remainHp <= 0) closeEnemy.condition = (int)UnitContition.DEAD;
+            if (unit.check == true)
+            {
+                closeEnemy.stat.remainHp -= unit.stat.power;
+                if (closeEnemy.stat.remainHp <= 0)
+                {
+                    unit.condition = (int)UnitContition.NORMAL;
+                    closeEnemy.condition = (int)UnitContition.DEAD;
+                }
+                unit.check = false;
+            }
         }
 
         return true;
@@ -146,6 +158,7 @@ public class UnitManager
 
     public bool moveToEnemy(Unit unit)
     {
+        unit.check = false;
         float minDistance = 1000.0f;
         Unit closeEnemy = null;
 
@@ -159,12 +172,15 @@ public class UnitManager
 
             foreach (Unit lUnit in value)
             {
+                if (lUnit.condition == (int)UnitContition.DEAD) continue;
+
                 float distance = (unit.position - lUnit.position).magnitude;
                 if (minDistance > distance)
-                 {
+                {
                     minDistance = distance;
                     closeEnemy = lUnit;
                 }
+
             }
         }
         if (closeEnemy == null)
@@ -178,7 +194,16 @@ public class UnitManager
         unit.condition = (int)UnitContition.MOVING;
         if (unit.condition == (int)UnitContition.MOVING)
         {
-            unit.position += (closeEnemy.position - unit.position).normalized * unit.stat.moveSpeed * 0.01f;
+            Vector3 tmpVector = (closeEnemy.position - unit.position).normalized;
+            if(tmpVector.x > 0)
+            {
+                unit.direction = new Vector3(0, 0, 0);
+            }
+            else 
+            {
+                unit.direction = new Vector3(0, 180, 0);
+            }
+            unit.position += tmpVector * unit.stat.moveSpeed * 0.01f;
         }
 
 
@@ -188,9 +213,6 @@ public class UnitManager
     public bool isUnitDead(Unit unit)
     {
         if (unit.stat.remainHp <= 0) return true;
-
-        unit.condition = (int)UnitContition.NORMAL;
-        
         return false;
     }
 
