@@ -73,7 +73,9 @@ public class UI_GridController : MonoBehaviour {
 
         scrollRect.content.sizeDelta = new Vector2(sizeX, sizeY);
         //scrollRect.content.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-        
+
+        //메모리 할당.
+        listGridItem.Capacity = savedDisplayRowCount * savedDisplayColumnCount;
 
         //한번에 표시가능한 숫자만큼 오브젝트들을 생성해놓는다..
         for (int y = 0; y < savedDisplayRowCount; ++y)
@@ -89,7 +91,9 @@ public class UI_GridController : MonoBehaviour {
 
                 //인덱스는 일단 -1 로 초기화 처리.
                 if (null != newObjGridItem)
-                    newObjGridItem.index = -1;
+                {
+                    newObjGridItem.Initialize();
+                }
 
                 
                 newObj.name = string.Format("{0}_{1}", newObj.name, idx);

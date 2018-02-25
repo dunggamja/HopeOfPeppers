@@ -218,7 +218,7 @@ namespace GAMEDATA
             for (int i = (int)DATA.WORK_KIND.WORK_BEGIN; i < (int)DATA.WORK_KIND.WORK_KIND_END; ++i)
             {
                 List<DATA.GAMEDATA_WORK_LEVEL> workLevelList = new List<DATA.GAMEDATA_WORK_LEVEL>();
-                for (int k = 1; k < 4; ++k)
+                for (int k = 1; k < 40; ++k)
                 {
                     DATA.GAMEDATA_WORK_LEVEL levelData = new DATA.GAMEDATA_WORK_LEVEL(k , k + 5, k * 2, k );
                     workLevelList.Add(levelData);

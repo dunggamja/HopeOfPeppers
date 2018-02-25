@@ -10,7 +10,10 @@ public class UIManager : MonoBehaviour
 	void Awake ()
     {
         Instance = this;
-        DontDestroyOnLoad(this);		
+        DontDestroyOnLoad(this);
+
+        //메모리 할당
+        listOpenUI.Capacity = 16;
 	}
 
 
@@ -53,6 +56,7 @@ public class UIManager : MonoBehaviour
             openUICom.transform.SetAsLastSibling();
             listOpenUI.Add(openUICom);
 
+            openUICom.Initialize();
             openUICom.Open();
         }
     }

@@ -14,6 +14,11 @@ public class UI_GridItem : MonoBehaviour
     public int Width = 0;
     public int Height = 0;
 
+    public virtual void Initialize()
+    {
+        index = -1;
+    }
+
     public virtual void UpdateUI(UI_GridItemData itemData)
     {
 

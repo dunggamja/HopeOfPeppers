@@ -18,6 +18,20 @@ public class Work
         CurAccumulateTime = aCurAccumulateTime;
     }
 
+    public void UpgradeLevel(int aLevel)
+    {
+        if (aLevel <= Level)
+            return;
+
+        var workLevelInfo = GAMEDATA.GAMEDATAINFOS.Instance.GetWorkLevelData(Kind, aLevel);
+        if (null == workLevelInfo)
+            return;
+
+        Level = aLevel;
+        WorkTime = workLevelInfo.WorkTime;
+        CurAccumulateTime = 0f;
+    }
+
     public void Update(float aDeltaTime)
     {
         CurAccumulateTime += aDeltaTime;
