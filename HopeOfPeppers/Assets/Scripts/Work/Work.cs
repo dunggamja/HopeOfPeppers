@@ -18,20 +18,36 @@ public class Work
         CurAccumulateTime = aCurAccumulateTime;
     }
 
+    public void UpgradeLevel(int aLevel)
+    {
+        if (aLevel <= Level)
+            return;
+
+        var workLevelInfo = GAMEDATA.GAMEDATAINFOS.Instance.GetWorkLevelData(Kind, aLevel);
+        if (null == workLevelInfo)
+            return;
+
+        Level = aLevel;
+        WorkTime = workLevelInfo.WorkTime;
+        CurAccumulateTime = 0f;
+    }
+
     public void Update(float aDeltaTime)
     {
         CurAccumulateTime += aDeltaTime;
 
         if (WorkTime <= CurAccumulateTime)
         {
-            //자원 획득 코드 추가해야됨.!!
-            int addGold = GetAddGold();
+            //골드 획득
+            GameMain.Instance.UserInfo.AddGold(GetEarningGold());
+
+            Debug.Log("AddGold : " + GameMain.Instance.UserInfo.Gold);
 
             CurAccumulateTime = 0;
         }
     }
 
-    private int GetAddGold()
+    public int GetEarningGold()
     {
         int addGold = 0;
 
@@ -43,5 +59,7 @@ public class Work
 
         return addGold;
     }
+
+    
 
 }

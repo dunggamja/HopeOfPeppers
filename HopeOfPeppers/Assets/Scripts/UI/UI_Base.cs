@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class UI_Base : MonoBehaviour
 {
+    public virtual void Initialize()
+    {
+
+    }
 
     public virtual void Open()
     {

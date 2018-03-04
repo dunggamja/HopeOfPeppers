@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,12 @@ public class WorkManager
 {
     private List<Work> workList = new List<Work>();
 
-    public void AddWork(int aKind, int aLevel)
+    public WorkManager()
+    {
+        SetWork((int)GAMEDATA.DATA.WORK_KIND.WORK_1, 1);
+    }
+
+    public void SetWork(int aKind, int aLevel)
     {
         var workLevelInfo = GAMEDATA.GAMEDATAINFOS.Instance.GetWorkLevelData(aKind, aLevel);
         if (null == workLevelInfo)
@@ -25,8 +31,10 @@ public class WorkManager
         }
         else
         {
-            workInfo = new Work(aKind, aLevel, workLevelInfo.WorkTime, 0f);
+            workInfo.UpgradeLevel(aLevel);
         }
+
+        EventNotifySystem.Instance.NotifyEvent(EventNotifySystem.EVENT_ID.WORK_LEVELUP, null);
     }
 
     public void RemoveWork(int aKind)
@@ -62,6 +70,11 @@ public class WorkManager
         });
 
         return workInfo;
+    }
+
+    public List<Work> GetWorkList()
+    {
+        return workList;
     }
 
 }
